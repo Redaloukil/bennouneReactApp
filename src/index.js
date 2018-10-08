@@ -8,13 +8,28 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './rootReducer';
-
+import { decode } from 'punycode';
+import setAuthorisationHeader from './app/utils/setAuthorisationHeader';
+import { userLogIn} from './app/actions/User'; 
 
 
 const store = createStore(
     rootReducer , 
     applyMiddleware(thunk)
 )
+
+
+
+if (localStorage.bennoune) {
+    const key = decode(localStorage.bennoune)
+    const user = {
+        token : localStorage.bennoune,
+        email : key.email , 
+    }
+    setAuthorisationHeader(localStorage.bennoune);
+    store.dispatch(userLogIn(user));
+}
+
 
 ReactDOM.render(
     <Provider store={store}>
