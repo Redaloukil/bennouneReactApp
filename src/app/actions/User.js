@@ -19,6 +19,14 @@ export const login = credentials => dispatch =>
                 dispatch(userLogIn)
 })
 
+export const signup = credentials => dispatch => 
+            UserApi.login(credentials)
+            .then(user => {
+                localStorage.bennoune = user.token
+                setAuthHeader(user.token)
+                dispatch(userLogIn)
+})
+
 export const logout = () => dispatch => {
     localStorage.removeItem("bennoune");
     setAuthHeader();
