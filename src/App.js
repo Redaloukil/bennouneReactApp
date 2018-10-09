@@ -1,49 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
-import api from './api';
+import { Route } from 'react-router-dom'; 
+import {} from './app/components/GuestRoute';
+import Home from './app/screens/Home';
+import Login from './app/screens/Login';
+import Signup from './app/screens/SIgnup';
+import Navbar from './app/components/Navbar';
+import GuestRoute from './app/components/GuestRoute';
+import UserRoute from './app/components/UserRoute';
 
-class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      user : {}
-    }
-  }
-  
-  
 
-  componentWillMount(){
-    
-
-    api.getUsers()
-    .then(res => {
-      console.log(res.data)
-    }).catch(err => {
-      console.log(err)
-    })
-
-    api.login(
-      {
-        email : 'loukil.red@gmail.com',
-        password : 'redareda'
-      })
-      .then((res)=> {
-        console.log(res)
-      })
-      .catch((err)=> {
-        console.log(err)
-      })
-  }
-
-  render() {
-    return (
-      <div className="App">
-        { this.state.user.email }
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div className="App">
+      <Navbar/>
+      <Route path="/" exact component={Home}/>
+      <GuestRoute path="/login/" exact component={Login}/>
+      <GuestRoute path="/signup/" exact component={Signup}/>
+    </div>
+  );
 }
+
+    
+  
+
 
 export default App;

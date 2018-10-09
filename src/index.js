@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore , applyMiddleware, combineReducers } from 'redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter , Route } from 'react-router-dom';
+
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import './index.css';
@@ -32,11 +33,12 @@ if (localStorage.bennoune) {
 
 
 ReactDOM.render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </Provider>, 
+    <BrowserRouter>
+        <Provider store={store}>
+            <Route component={App}/>
+        </Provider>
+    </BrowserRouter>
+    , 
     document.getElementById('root')
 );
 
