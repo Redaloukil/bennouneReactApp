@@ -10,7 +10,8 @@ class SignupForm extends React.Component {
             errors : {
                 email:"",
                 password:""
-            }
+            },
+            isLoading :False 
         }
     }
     render (){
