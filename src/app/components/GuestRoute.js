@@ -1,10 +1,16 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route , Redirect } from 'react-router-dom';
 
-const GuestRoute = (isAuthenticated , location , {...rest}) => {
+
+const GuestRoute = ({isAuthenticated , component:Component , ...rest } ) => {
     return(
-        <Route/>
-    )
+        <Route
+            {...rest}
+            render={props =>
+            isAuthenticated ? <Component {...props} /> : <Redirect to="/" />}
+        />
+    );
+    
 }
 
 
