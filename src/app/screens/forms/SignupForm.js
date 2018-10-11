@@ -43,7 +43,7 @@ class SignupForm extends React.Component {
           this.setState({ loading: true });
           this.props
             .submit(this.state.data)
-            .catch(err =>
+            .catch(err => 
               this.setState({ errors: err.response.data.errors, loading: false })
             );
         }
@@ -73,7 +73,7 @@ class SignupForm extends React.Component {
                     onChange={this.onChange}
                 />
                 {errors.password && <InlineError text={errors.password} />}
-                <label htmlFor="confirmpassword">Password</label>
+                <label htmlFor="confirmpassword">Confirm Password</label>
                 <input
                     type="password"
                     id="confirm_password"

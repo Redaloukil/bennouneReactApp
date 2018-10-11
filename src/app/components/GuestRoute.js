@@ -2,8 +2,7 @@ import React from 'react';
 import { Route , Redirect } from 'react-router-dom';
 
 
-const GuestRoute = ({isAuthenticated , component:Component , ...rest } ) => {
-    {console.log(isAuthenticated)}
+export const GuestRoute = ({isAuthenticated , component:Component , ...rest } ) => {
     return(
         <Route
         {...rest}
@@ -19,4 +18,3 @@ const GuestRoute = ({isAuthenticated , component:Component , ...rest } ) => {
 }
 
 
-export default GuestRoute;

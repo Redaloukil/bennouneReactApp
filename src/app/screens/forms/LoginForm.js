@@ -48,20 +48,26 @@ class LoginForm extends React.Component {
       render (){
         const { data , errors , loading } = this.state
         return (
-            <div>
+            <div className="col-sm-4">
             <form onSubmit={this.onSubmit} loading={loading}>
-                <label htmlFor="email">Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="email@email.com"
-                    value={data.email}
-                    onChange={this.onChange}
-                />
-                {errors.email && <InlineError text={errors.email} />}
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input
+                        placeholder="Enter email"
+                        className="form-control"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="email@email.com"
+                        value={data.email}
+                        onChange={this.onChange}
+                    />
+                    {errors.email && <InlineError text={errors.email} />}
+                </div>
+                <div class="form-group">
                 <label htmlFor="password">Password</label>
                 <input
+                    className="form-control"
                     type="password"
                     id="password"
                     name="password"
@@ -69,7 +75,8 @@ class LoginForm extends React.Component {
                     onChange={this.onChange}
                 />
                 {errors.password && <InlineError text={errors.password} />}
-                <button>Login</button>
+                </div>
+                <button type="submit" className="btn btn-primary">Login</button>
             </form>
         </div>
         )

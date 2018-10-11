@@ -3,8 +3,7 @@ import React from 'react';
 const InlineError = (props) => {
     return(
         <div>
-            <p>this is a fucking error</p>
-            <small>{this.props.text}</small>
+            <small id="emailHelp" class="form-text text-muted">{this.props.errors}</small>
         </div>
     )
 }
