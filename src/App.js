@@ -5,6 +5,7 @@ import {} from './app/components/GuestRoute';
 import Home from './app/screens/Home';
 import Login from './app/screens/Login';
 import Signup from './app/screens/Signup';
+import Dashbord from './app/screens/Dashbord';
 import Navbar from './app/components/Navbar';
 import GuestRoute from './app/components/GuestRoute';
 import UserRoute from './app/components/UserRoute';
@@ -15,8 +16,9 @@ const App = () => {
     <div className="App">
       <Navbar/>
       <Route path="/" exact component={Home}/>
-      <GuestRoute path="/login/" exact component={Login}/>
-      <GuestRoute path="/signup/" exact component={Signup}/>
+      <GuestRoute exact path="/login"  component={Login}/>
+      <GuestRoute exact path="/signup" component={Signup}/>
+      <UserRoute exact path="/dashbord" component={Dashbord}/>
     </div>
   );
 }
