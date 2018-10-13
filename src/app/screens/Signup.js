@@ -6,7 +6,7 @@ import {signup} from '../actions/User';
 
 class Signup extends React.Component{
     submit = (data) => {
-        console.log("hello world , gonna do a signup for everybody");
+        signup(data)
     }
     render(){
         return(

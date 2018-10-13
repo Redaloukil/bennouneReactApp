@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import './App.css';
+import './index.css';
 import { Route } from 'react-router-dom'; 
 import Home from './app/screens/Home';
 import Login from './app/screens/Login';
