@@ -4,19 +4,22 @@ import { connect } from 'react-redux';
 import { login } from '../actions/User';
 
 class Login extends React.Component{
-    submit = () => {
-        console.log('hello world this is a login');
+    submit = (data) => {
+        console.log(data);
+        this.props.login(data).then(()=> {
+            console.log("login has been made")
+        })
     }
     
     render(){
         return(
             <div className="container">
             <div className="row">
-            <div className="col-sm-4">
+            <div className="col-sm-3">
             </div>
-            <div className="col-sm-4">
+            <div className="col-sm-6">
             <div className="box">
-                <LoginForm submit={this.login}/>
+                <LoginForm submit={this.submit}/>
             </div>
             
             </div>

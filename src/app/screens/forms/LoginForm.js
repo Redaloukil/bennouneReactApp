@@ -28,14 +28,19 @@ class LoginForm extends React.Component {
             }
         })
     }
-    validate() {
-        if (!isEmail(this.state.data.email)) this.state.errors.email = "it an invalid email";
-        if (this.state.data.password != this.state.data.confirm_password )  this.state.errors.password = "wrong password u set";
-    }
-    onSubmit = e => {
-        e.preventDefault();
-        this.validate();
-        if (Object.keys(this.state.errors).length === 0) {
+    validate = data => {
+        const errors = {};
+        console.log(data.email + ' ' + data.password)
+        if (!isEmail(data.email)) errors.email = "Invalid email";
+        if (!data.password) errors.password = "Can't be blank";
+        return errors;
+    };
+
+    onSubmit = (e) => {
+        e.preventDefault()
+        const errors = this.validate(this.state.data);
+        this.setState({ errors });
+        if (Object.keys(errors).length === 0) {
           this.setState({ loading: true });
           this.props
             .submit(this.state.data)
@@ -43,7 +48,7 @@ class LoginForm extends React.Component {
               this.setState({ errors: err.response.data.errors, loading: false })
             );
         }
-      };
+    };
     
       render (){
         const { data , errors , loading } = this.state

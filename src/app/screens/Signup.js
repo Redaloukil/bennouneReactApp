@@ -6,17 +6,19 @@ import {signup} from '../actions/User';
 
 class Signup extends React.Component{
     submit = (data) => {
-        signup(data)
+        this.props.submit(data).then(()=> {
+            console.log("Signup has been made")
+        })
     }
     render(){
         return(
             <div className="container">
             <div className="row">
-            <div className="col-sm-4">
+            <div className="col-sm-3">
             </div>
-            <div className="col-sm-4">
+            <div className="col-sm-6">
             <div className="box">
-                <SignupForm submit={this.signup}/>
+                <SignupForm submit={this.submit}/>
             </div>
             
             </div>
@@ -28,9 +30,6 @@ class Signup extends React.Component{
 }
 
 export default connect(null, { signup })(Signup);
-// Signup.prototype = {
-//     signup : PropTypes.func.isRequired , 
-    
-// }
+
 
 
