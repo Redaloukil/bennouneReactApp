@@ -45,3 +45,14 @@ header {
   font-size:260%; 
 }
 
+.box {
+  background-color: #FFF;
+  color:black;
+  padding:5%;
+}
+
+.btn-lg {
+  width: 100%;
+  background-color: #FF715B;
+  border:2px solid #FFF;
+}

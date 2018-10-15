@@ -10,9 +10,19 @@ class Signup extends React.Component{
     }
     render(){
         return(
-            <div>
-                <SignupForm submit={this.submit}/>
+            <div className="container">
+            <div className="row">
+            <div className="col-sm-4">
             </div>
+            <div className="col-sm-4">
+            <div className="box">
+                <SignupForm submit={this.signup}/>
+            </div>
+            
+            </div>
+            </div>
+            </div>
+            
         )
     }
 }

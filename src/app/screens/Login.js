@@ -10,9 +10,20 @@ class Login extends React.Component{
     
     render(){
         return(
-            <div>
+            <div className="container">
+            <div className="row">
+            <div className="col-sm-4">
+            </div>
+            <div className="col-sm-4">
+            <div className="box">
                 <LoginForm submit={this.login}/>
             </div>
+            
+            </div>
+            </div>
+            </div>
+            
+            
         )
     }
 }

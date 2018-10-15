@@ -55,7 +55,7 @@ class SignupForm extends React.Component {
     render (){
         const { data , errors , loading } = this.state
         return (
-            <div className="col-sm-4">
+            <div className="">
             <form onSubmit={this.onSubmit} loading={loading}>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
@@ -95,7 +95,7 @@ class SignupForm extends React.Component {
                     />
                     {errors.password && <InlineError text={errors.password} />}
                 </div>
-                <button type="submit" className="btn btn-primary">Signup</button>
+                <button type="submit" className="btn btn-primary btn-lg">Signup</button>
             </form>
         </div>
         )
