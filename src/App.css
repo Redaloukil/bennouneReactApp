@@ -1,11 +1,47 @@
 body {
   font-size:20px;
+  background-color:#FF715B;
+  color: white;
 }
 
 header {
-  height:100vh;
+  
 }
 #Home {
   position: relative;
   top: 20vh;
+  
 }
+#search-bennoune {
+  padding:3% 1%;
+}
+.button-search {
+  background-color: white;
+  border-bottom-right-radius: 0;
+  border-top-right-radius:0;
+  border-color: #f4f4f4;
+  color: #FF715B;
+  padding:2% 3%;
+}
+.btn-outline-success:hover {
+  background-color: #f8f8f8;
+  color: #FF715B;
+  border-color: #f4f4f4;
+}
+.input-search {
+  border-bottom-left-radius: 0;
+  border-top-left-radius:0;
+  padding:3% 3%;
+}
+
+.promo {
+  background-color:#f4f4f4;
+  color:#333;
+  padding:4%;
+  border-radius:4px;  
+}
+
+.promo i {
+  font-size:260%; 
+}
+
