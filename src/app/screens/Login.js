@@ -9,13 +9,14 @@ class Login extends React.Component{
         this.submit = this.submit.bind(this)
         
     }
-
     submit = (data) => {
-        this.props.login(data)
-        .then((res )=> {
-            console.log(res)
+        this.props.login(
+            data
+        )
+        .then((res)=> {
+            
         }).catch((err)=> {
-            console.log(err)
+            
         })
     }
     

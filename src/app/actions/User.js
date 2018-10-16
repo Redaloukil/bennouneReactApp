@@ -20,6 +20,7 @@ export const login = credentials => dispatch =>
             UserApi.login(credentials)
             .then(user => {
                 localStorage.bennoune = user.token
+                console.log("hello world")
                 setAuthHeader(user.token)
                 dispatch(userLogIn)
 })

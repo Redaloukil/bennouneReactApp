@@ -30,25 +30,23 @@ class SignupForm extends React.Component {
         })
     }
     
-    validate() {
-        if (!isEmail(this.state.data.email)) { this.state.errors.email = "it an invalid email"; }
-        if (this.state.data.password != this.state.data.confirm_password ){  this.state.errors.password = "wrong password u set"; }     
-        console.log("email");
+    validate(data) {
+        const errors = {};
+        if (!isEmail(data.email)) { errors.email = "it an invalid email"; }
+        if (data.password != data.confirm_password ){  errors.password = "wrong password u set"; }     
+        return errors;
     }
 
 
     onSubmit = e => {
         e.preventDefault();
-        this.validate();
-        console.log("submit")
+        const errors = this.validate(this.state.data);
+        this.setState({errors})
         if (Object.keys(this.state.errors).length == 0) {
           this.setState({ loading: true });
           console.log("submitted")
           this.props
             .submit(this.state.data)
-            .catch(err => 
-              this.setState({ errors: err.response.data.errors, loading: false })
-            );
         }
       };
     

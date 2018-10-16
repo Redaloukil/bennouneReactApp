@@ -6,7 +6,7 @@ import {signup} from '../actions/User';
 
 class Signup extends React.Component{
     submit = (data) => {
-        this.props.submit(data).then(()=> {
+        this.props.signup(data).then(()=> {
             console.log("Signup has been made")
         })
     }
@@ -34,7 +34,10 @@ class Signup extends React.Component{
     }
 }
 
-export default connect(null, { signup })(Signup);
+export default connect(
+    null, 
+    { signup }
+)(Signup);
 
 
 

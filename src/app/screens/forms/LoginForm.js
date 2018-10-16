@@ -46,9 +46,7 @@ class LoginForm extends React.Component {
           this.setState({ loading: true });
           this.props
             .submit(this.state.data)
-            // .catch(err =>
-            //   this.setState({ errors: err.response.data.errors, loading: false })
-            // );
+            
         }
     };
     
@@ -83,6 +81,8 @@ class LoginForm extends React.Component {
                 />
                 {errors.password && <InlineError text={errors.password} />}
                 </div>
+                <br/>
+                
                 <button type="submit" className="btn btn-primary btn-lg">Login</button>
             </form>
         </div>
