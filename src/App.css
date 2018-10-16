@@ -48,7 +48,10 @@ header {
 .box {
   background-color: #FFF;
   color:black;
-  padding:5%;
+  padding:9% 5%; 
+  margin-top:100px;
+
+
 }
 
 .btn-lg {

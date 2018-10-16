@@ -18,7 +18,10 @@ class LoginForm extends React.Component {
             },
             loading :false 
         }
-        this.onChange = this.onChange.bind(this)
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.validate = this.validate.bind(this);
+    
     }
     onChange(e){
         this.setState({
@@ -30,7 +33,6 @@ class LoginForm extends React.Component {
     }
     validate = data => {
         const errors = {};
-        console.log(data.email + ' ' + data.password)
         if (!isEmail(data.email)) errors.email = "Invalid email";
         if (!data.password) errors.password = "Can't be blank";
         return errors;
@@ -44,9 +46,9 @@ class LoginForm extends React.Component {
           this.setState({ loading: true });
           this.props
             .submit(this.state.data)
-            .catch(err =>
-              this.setState({ errors: err.response.data.errors, loading: false })
-            );
+            // .catch(err =>
+            //   this.setState({ errors: err.response.data.errors, loading: false })
+            // );
         }
     };
     

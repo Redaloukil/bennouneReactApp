@@ -18,6 +18,11 @@ class Signup extends React.Component{
             </div>
             <div className="col-sm-6">
             <div className="box">
+            <div className="form-header">
+                
+            <h2 className="h4 text-center">Register in Bennoune</h2>
+
+            </div>
                 <SignupForm submit={this.submit}/>
             </div>
             
