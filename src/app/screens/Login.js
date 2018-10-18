@@ -10,13 +10,12 @@ class Login extends React.Component{
         
     }
     submit = (data) => {
+        console.log(data)
         this.props.login(
-            data
+            data.user
         )
-        .then((res)=> {
-            
-        }).catch((err)=> {
-            
+        .then(()=> {
+            this.props.history.push("/")
         })
     }
     

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './index.css';
+import { connect } from 'react-redux';
 import { Route } from 'react-router-dom'; 
 import Home from './app/screens/Home';
 import Login from './app/screens/Login';
@@ -17,7 +18,7 @@ const App = ({isAuthenticated , location}) => {
     <div className="App">
       <Navbar/>
       <Route path="/" exact component={Home}/>
-      <GuestRoute exact path="/login" exact component={Login}/>
+      <GuestRoute location={location} exact path="/login" exact component={Login}/>
       <GuestRoute exact path="/signup" exact component={Signup}/>
       <UserRoute exact path="/dashbord" exact component={Dashbord}/>
     </div>
@@ -26,6 +27,12 @@ const App = ({isAuthenticated , location}) => {
 
     
   
+// function mapStateToProps(state) {
+//   return {
+//     isAuthenticated: !!state.user.email
+//   };
+// }
+
+export default App
 
 
-export default App;

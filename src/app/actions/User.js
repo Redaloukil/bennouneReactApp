@@ -18,11 +18,11 @@ export const userSignup = user => ({
 
 export const login = credentials => dispatch => 
             UserApi.login(credentials)
-            .then(user => {
-                localStorage.bennoune = user.token
-                console.log("hello world")
-                setAuthHeader(user.token)
-                dispatch(userLogIn)
+            .then(res => {
+                console.log(res.data)
+                localStorage.bennoune = res.data.token
+                setAuthHeader(res.data.token)
+                dispatch(userLogIn(res.data))
 })
 
 export const signup = credentials => dispatch => 
