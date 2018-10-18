@@ -27,11 +27,11 @@ const App = ({isAuthenticated , location}) => {
 
     
   
-// function mapStateToProps(state) {
-//   return {
-//     isAuthenticated: !!state.user.email
-//   };
-// }
+function mapStateToProps(state) {
+  return {
+    isAuthenticated: !!state.user.email
+  };
+}
 
 export default App
 

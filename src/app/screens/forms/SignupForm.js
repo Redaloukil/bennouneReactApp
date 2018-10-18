@@ -44,9 +44,11 @@ class SignupForm extends React.Component {
         this.setState({errors})
         if (Object.keys(this.state.errors).length == 0) {
           this.setState({ loading: true });
-          console.log("submitted")
           this.props
-            .submit(this.state.data)
+            .submit({
+                email : this.state.data.email , 
+                password : this.state.data.password ,
+            })
         }
       };
     

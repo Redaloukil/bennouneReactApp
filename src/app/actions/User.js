@@ -27,10 +27,11 @@ export const login = credentials => dispatch =>
 
 export const signup = credentials => dispatch => 
             UserApi.signup(credentials)
-            .then(user => {
-                localStorage.bennoune = user.token
-                setAuthHeader(user.token)
-                dispatch(userSignup)
+            .then(res => {
+                console.log(res)
+                localStorage.bennoune = res.data.token
+                setAuthHeader(res.data.token)
+                dispatch(userSignup(res.data))
 })
 
 export const logout = () => dispatch => {
